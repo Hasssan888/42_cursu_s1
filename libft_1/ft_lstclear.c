@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 21:16:19 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/09 21:19:48 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:49:44 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (lst == NULL || *lst == NULL)
 		return ;
+	current = *lst;
+	next = NULL;
 	while (current != NULL)
 	{
 		next = current->next;

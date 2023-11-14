@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 12:31:04 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/04 12:44:58 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:09:28 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		ft_memcpy(result, s1, ft_strlen(s1));
 		ft_memcpy(result + ft_strlen(s1), s2, ft_strlen(s2));
-		result[len] = '\0';
+		result[len - 1] = '\0';
 	}
 	return (result);
 }	

@@ -6,32 +6,33 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 20:10:37 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/03 19:17:22 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/13 22:53:09 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	len_dst;
 	size_t	len_src;
-	size_t	len_dest;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	if (!dst && size == 0)
+		return (ft_strlen(src));
+	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
-	len_dest = ft_strlen(dest);
-	if (len_dest > size)
-		len_dest = size;
-	if (len_dest == size)
-		return (size + len_src);
-	if (len_src < size - len_dest)
+	if (size <= len_dst || size == 0)
+		return (len_src + size);
+	j = len_dst;
+	while (src[i] != '\0' && i < size - len_dst - 1)
 	{
-		ft_memcpy(dest + len_dest, src, len_src);
-		dest[len_dest + len_src] = '\0';
+		((char *)dst)[j] = ((char *)src)[i];
+		i++;
+		j++;
 	}
-	else
-	{
-		ft_memcpy(dest + len_dest, src, len_src);
-		dest[size - 1] = '\0';
-	}
-	return (len_dest + len_src);
+	dst[j] = '\0';
+	return (len_dst + len_src);
 }
