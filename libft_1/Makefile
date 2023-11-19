@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/10 14:10:06 by hbakrim           #+#    #+#              #
-#    Updated: 2023/11/12 22:50:14 by hbakrim          ###   ########.fr        #
+#    Created: 2023/11/19 16:51:47 by hbakrim           #+#    #+#              #
+#    Updated: 2023/11/19 16:51:50 by hbakrim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 SRCS = ./ft_isalpha.c ft_isdigit.c ./ft_isalnum.c\
  ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c\
@@ -29,7 +28,7 @@ OBJS = ${SRCS:.c=.o}
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o} 
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -38,12 +37,12 @@ NAME = libft.a
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rc $@ $^
+	ar rc ${NAME} ${OBJS}
 
 bonus : ${OBJS_BONUS}
 	ar rc ${NAME} $^
 
-.c.o :
+.c.o:
 	${CC} ${CFLAGS} -c $< -o $@
 
 clean:

@@ -6,33 +6,33 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 20:10:37 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/13 22:53:09 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:41:21 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	len_dst;
-	size_t	len_src;
-	size_t	i;
-	size_t	j;
+	size_t	len_d;
+	size_t	len_s;
+	size_t	a;
+	size_t	b;
 
-	i = 0;
-	if (!dst && size == 0)
+	a = 0;
+	if (!dest && size == 0)
 		return (ft_strlen(src));
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	if (size <= len_dst || size == 0)
-		return (len_src + size);
-	j = len_dst;
-	while (src[i] != '\0' && i < size - len_dst - 1)
+	len_d = ft_strlen(dest);
+	len_s = ft_strlen(src);
+	if (size <= len_d || size == 0)
+		return (len_s + size);
+	b = len_d;
+	while (src[a] != '\0' && a < size - len_d - 1)
 	{
-		((char *)dst)[j] = ((char *)src)[i];
-		i++;
-		j++;
+		((char *)dest)[b] = ((char *)src)[a];
+		a++;
+		b++;
 	}
-	dst[j] = '\0';
-	return (len_dst + len_src);
+	dest[b] = '\0';
+	return (len_d + len_s);
 }

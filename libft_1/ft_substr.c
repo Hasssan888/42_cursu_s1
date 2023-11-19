@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 11:30:01 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/13 15:10:06 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:17:46 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	len_sub;
 	char	*substring;
 
+	if (s == NULL)
+		return (0);
 	len_s = ft_strlen(s);
 	if (start >= len_s)
 		return (ft_strdup(""));

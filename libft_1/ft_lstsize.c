@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:35:48 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/13 15:14:27 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:28:54 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	int		size;
 	t_list	*current;
 
+	if (lst == NULL)
+		return (0);
 	size = 0;
 	current = lst;
 	while (current != NULL)

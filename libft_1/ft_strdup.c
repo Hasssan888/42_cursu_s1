@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:46:33 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/10 22:37:42 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 15:35:22 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strdup(const char *str)
 
 	len = ft_strlen(str) + 1;
 	new_str = malloc(sizeof(char) * len);
-	if (new_str != NULL)
-		ft_memcpy(new_str, str, len);
+	if (new_str == NULL)
+		return (NULL);
+	ft_memcpy(new_str, str, len);
 	return (new_str);
 }

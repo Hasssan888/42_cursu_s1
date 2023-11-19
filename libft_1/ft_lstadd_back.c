@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:48:41 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/13 16:33:55 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:20:23 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
-	if (new == NULL)
+	if (lst == NULL || new == NULL)
 		return ;
 	else
 	{

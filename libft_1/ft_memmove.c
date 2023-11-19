@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:41:05 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/14 01:50:01 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 15:20:46 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	if (dest == NULL && src == NULL)
 		return (NULL);
+	if (dest == src)
+		return ((void *)src);
 	d = (unsigned char *)dest;
 	s = (unsigned const char *)src;
 	if (d > s && d < s + n)

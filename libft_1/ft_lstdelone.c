@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 21:05:40 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/09 21:09:24 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 16:25:12 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst == NULL)
+	if (lst == NULL || del == NULL)
 		return ;
-	if (del != NULL)
-		del(lst->content);
+	del(lst->content);
 	free(lst);
 }
