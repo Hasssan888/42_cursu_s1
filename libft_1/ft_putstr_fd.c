@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:26:34 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/07 20:20:35 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:27:57 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	len;
 
-	if (s == NULL)
+	if (s == NULL || fd < 0)
 		return ;
 	len = 0;
 	while (s[len])

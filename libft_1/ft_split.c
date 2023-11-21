@@ -6,11 +6,25 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:02:34 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/19 15:25:12 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:47:01 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**ft_free(char **s, int j)
+{
+	int	i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (NULL);
+}
 
 static int	count_w(char *str, char c)
 {
@@ -68,6 +82,8 @@ char	**ft_split(char const *s, char c)
 			if (*s != c)
 			{
 				strs[i] = alloc_w((char *)s, c);
+				if (strs[i] == NULL)
+					return(ft_free(strs, i));
 				i++;
 				while (*s && *s != c)
 					s++;
