@@ -32,3 +32,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[len] = '\0';
 	return (result);
 }
+/*
+
+char trf_case(unsigned int index, char c)
+{
+    return c - index;
+}
+int main()
+{
+    const char *input = "Hello, world!";
+    char *output = ft_strmapi(input, index_case);
+    if (output != NULL)
+    {
+        printf("Input: %s\n", input);
+        printf("Output: %s\n", output);
+        free(output);
+    }
+    return 0;
+}*/

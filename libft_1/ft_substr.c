@@ -35,3 +35,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	return (substring);
 }
+/*int main()
+{
+    const char *input = "Hello, world!";
+    unsigned int start = 7;
+    size_t length = 5;
+
+    char *substring = ft_substr(input, start, length);
+    if (substring != NULL)
+    {
+        printf("Input: %s\n", input);
+        printf("Substring: %s\n", substring);
+        free(substring);
+    }
+    return 0;
+}*/

@@ -24,3 +24,22 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, s, len);
 	write(fd, "\n", 1);
 }
+/*
+#include <fcntl.h>
+int main()
+{
+    int fd = open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0)
+    {
+        // Error opening file
+        return 1;
+    }
+
+    char *message = "Hello, world!";
+    ft_putendl_fd(message, fd);
+
+    close(fd);
+
+    return 0;
+}
+*/

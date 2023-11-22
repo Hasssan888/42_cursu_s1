@@ -17,7 +17,7 @@ void	*ft_calloc(size_t num_elem, size_t size_elem)
 	size_t	total_size;
 	void	*ptr;
 
-	if (num_elem && size_elem && num_elem > (UINT_MAX / size_elem))
+	if (size_elem && num_elem > (UINT_MAX / size_elem))
 		return (NULL);
 	total_size = num_elem * size_elem;
 	ptr = malloc(total_size);
@@ -25,3 +25,11 @@ void	*ft_calloc(size_t num_elem, size_t size_elem)
 		ft_bzero(ptr, total_size);
 	return (ptr);
 }
+
+/*#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+int main() {
+	//printf("%s\n",ft_calloc(7 ,(size_t) (-7)));
+	printf("%s\n", ft_calloc(INT_MAX, INT_MAX));
+}*/

@@ -32,3 +32,22 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
+/*
+#include <fcntl.h>
+int main()
+{
+    int fd = open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0)
+    {
+        // Error opening file
+        return 1;
+    }
+
+    int number = -12345;
+    ft_putnbr_fd(number, fd);
+
+    close(fd);
+
+    return 0;
+}
+*/

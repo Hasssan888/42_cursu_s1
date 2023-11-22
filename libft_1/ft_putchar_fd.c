@@ -18,3 +18,21 @@ void	ft_putchar_fd(char c, int fd)
 		return ;
 	write(fd, &c, 1);
 }
+
+/*#include <fcntl.h>
+int main()
+{
+    int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        // Error opening file
+        return 1;
+    }
+
+    char c = 'A';
+    ft_putchar_fd(c, fd);
+
+    close(fd);
+
+    return 0;
+}*/

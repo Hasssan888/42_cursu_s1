@@ -6,7 +6,7 @@
 /*   By: hbakrim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:02:34 by hbakrim           #+#    #+#             */
-/*   Updated: 2023/11/19 22:47:01 by hbakrim          ###   ########.fr       */
+/*   Updated: 2023/11/21 17:29:23 by hbakrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,9 @@ static char	*alloc_w(char *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		word;
 	int		i;
 
-	word = count_w((char *)s, c);
-	strs = (char **)malloc(sizeof(char *) * (word + 1));
+	strs = (char **)malloc(sizeof(char *) * (count_w((char *)s, c) + 1));
 	if (strs != NULL)
 	{
 		i = 0;
@@ -83,7 +81,7 @@ char	**ft_split(char const *s, char c)
 			{
 				strs[i] = alloc_w((char *)s, c);
 				if (strs[i] == NULL)
-					return(ft_free(strs, i));
+					return (ft_free(strs, i));
 				i++;
 				while (*s && *s != c)
 					s++;
@@ -95,3 +93,21 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
+/*int main()
+{
+    const char *sentence = "Hello,world,this,is,a,test";
+    char delimiter = ',';
+    char **words = ft_split(sentence, delimiter);
+    if (words != NULL)
+    {
+        int i = 0;
+        while (words[i] != NULL)
+        {
+            printf("%s\n", words[i]);
+            free(words[i]);
+            i++;
+        }
+        free(words);
+    }
+    return 0;
+}*/
